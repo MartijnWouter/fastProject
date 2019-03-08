@@ -17,6 +17,12 @@ namespace ConsoleApp2
             this.min = min;
             this.sec = sec;
         }
+        public Time(int hour, int min)
+        {
+            this.hour = hour;
+            this.min = min;
+            this.sec = 0;
+        }
         public int getHour()
         {
             return hour;

@@ -9,7 +9,7 @@ namespace ConsoleApp2
     public class Ride
     {
         private Date startingDate;
-        private int[] startingTime;
+        private Time startingTime;
         private Vehicle vehicle;
         private string startingPlace;
 
@@ -19,6 +19,51 @@ namespace ConsoleApp2
             this.startingTime = startingTime;
             this.vehicle = vehicle;
             this.startingPlace = startingPlace;
+        }
+        public String getStartingDate(string precition)
+        {
+            if(precition.ToLower() == "month")
+            {
+                return startingDate.getMonth() + "-" + startingDate.getYear();
+            }else if(precition.ToLower() == "year")
+            {
+                return "" + startingDate.getYear();
+            }
+            else
+            {
+                return startingDate.getDay() + "-" + startingDate.getMonth() + "-" + startingDate.getYear();
+            }
+        }
+        public Date getStartingDate()
+        {
+                return startingDate;
+        }
+        public Time getStartingTime()
+        {
+            return startingTime;
+        }
+        public String getStartingTime(string precition)
+        {
+            if (precition.ToLower() == "hour")
+            {
+                return startingTime.getHour() + "";
+            }
+            else if (precition.ToLower() == "min")
+            {
+                return startingTime.getHour() + ":" + startingTime.getMin();
+            }
+            else
+            {
+                return startingTime.getHour() + ":" + startingTime.getMin() + ":" + startingTime.getSec();
+            }
+        }
+        public Vehicle getVehicle()
+        {
+            return vehicle;
+        }
+        public String getStartingPlace()
+        {
+            return startingPlace;
         }
     }
 }

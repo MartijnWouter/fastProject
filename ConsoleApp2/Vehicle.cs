@@ -9,8 +9,9 @@ namespace ConsoleApp2
     public class Vehicle
     {
         private string type;
-        private Price price;
-        public Vehicle(string newType, Price price)
+        private Price startingPrice;
+        private Price pricePerKM;
+        public Vehicle(string newType, Price startingPrice, Price pricePerKM)
         {
             if (newType == "car" || newType == "bus")
             {
@@ -20,7 +21,8 @@ namespace ConsoleApp2
             {
                 type = "car";
             }
-            this.price = price;
+            this.startingPrice = startingPrice;
+            this.pricePerKM = pricePerKM;
         }
         public string getType()
         {
