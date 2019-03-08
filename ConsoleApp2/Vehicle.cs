@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp2
 {
+    [Serializable]
     public class Vehicle
     {
         private string type;

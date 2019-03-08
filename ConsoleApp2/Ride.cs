@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp2
 {
+    [Serializable]
     public class Ride
     {
         private Date startingDate;
         private Time startingTime;
         private Vehicle vehicle;
         private string startingPlace;
-
+        private bool done = false;
+        private bool started = false;
         public Ride(Date startingDate, Time startingTime, Vehicle vehicle, string startingPlace)
         {
             this.startingDate = startingDate;
@@ -37,6 +39,22 @@ namespace ConsoleApp2
         public Date getStartingDate()
         {
                 return startingDate;
+        }
+        public bool isDone()
+        {
+            return done;
+        }
+        public bool isStarted()
+        {
+            return started;
+        }
+        public void start()
+        {
+            started = true;
+        }
+        public void nowDone()
+        {
+            done = true;
         }
         public Time getStartingTime()
         {
