@@ -15,10 +15,12 @@ namespace ConsoleApp2
         private object[] database = new object[400000];
         public Data()
         {
+            Console.WriteLine("entered main constructor");
             load();
         }
         public Data(object[] newDatabase)
         {
+            Console.WriteLine("entered secondary constructor");
             int length = database.Length;
             for (int i = 0; i < length; i++)
             {

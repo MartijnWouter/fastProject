@@ -15,24 +15,27 @@ namespace ConsoleApp2
         public static void Main(string[] args)
         {
             Console.WriteLine("starting up the program");
-            Data rides = new Data();
-            //string curPlace = Directory.GetCurrentDirectory();
-            //DirectoryInfo diract = new DirectoryInfo(curPlace);
-            Console.WriteLine(".");
-            /*var files = diract.GetFiles("*.bin");
+            string curPlace = Directory.GetCurrentDirectory();
+            DirectoryInfo diract = new DirectoryInfo(curPlace);
+            Console.WriteLine("curent location found");
+            var files = diract.GetFiles("*.bin");
             var name = "database" + ".bin";
             var fileName = Path.Combine(diract.FullName, name);
-            var file = new FileInfo(fileName);*/
-            //Console.WriteLine("nope");
-            /*if (file.Exists)
+            var file = new FileInfo(fileName);
+            Console.WriteLine("filepath generated");
+            Data rides;
+            Console.WriteLine("variables initiated");
+            if (file.Exists)
             {
-                //Data rides = new Data();
+                Console.WriteLine("file exists");
+                rides = new Data();
             }
             else
             {
-
-                Data rides = new Data(new object[0]);
-            }*/
+                Console.WriteLine("generating file");
+                rides = new Data(new object[0]);
+            }
+            Console.WriteLine("done");
             string startingInput = Console.ReadLine();
             if (startingInput.ToLower() == "test")
             {
@@ -95,8 +98,7 @@ namespace ConsoleApp2
                         {
                             if (database[i] != null)
                             {
-                                //Console.WriteLine(database[i].ToString());
-                                //Console.ReadLine();
+                                Console.WriteLine(database[i]);
                             }
                         }
                         Console.ReadLine();
